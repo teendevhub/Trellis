@@ -1,0 +1,3 @@
+Placeholder — replace docs/screenshot-placeholder.png with a real
+screenshot of the home page (light or dark mode) once the app is deployed
+or run locally. Update the README image path if you rename the file.

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+/* Dark mode toggled via a `.dark` class on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Trellis palette — pine greens + parchment + amber bloom accent */
+  --color-paper: #F3F5EE;
+  --color-paper-raised: #FFFFFF;
+  --color-ink: #182018;
+  --color-ink-soft: #4B564C;
+  --color-line: #D7DDCE;
+
+  --color-pine-50: #EEF4EF;
+  --color-pine-100: #D6E5D9;
+  --color-pine-300: #8FB99B;
+  --color-pine-500: #3F7D58;
+  --color-pine-600: #336648;
+  --color-pine-700: #294F38;
+  --color-pine-900: #16281C;
+
+  --color-amber-300: #F0C384;
+  --color-amber-500: #D98E3F;
+  --color-amber-600: #B8722C;
+
+  --color-dark-bg: #101710;
+  --color-dark-surface: #172018;
+  --color-dark-surface-raised: #1E2A20;
+  --color-dark-ink: #E7EDE3;
+  --color-dark-ink-soft: #A9B5A6;
+  --color-dark-line: #2B372D;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+html.dark body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-ink);
+}
+
+::selection {
+  background-color: var(--color-pine-300);
+  color: var(--color-pine-900);
+}
+
+/* Signature motif: a literal trellis lattice — diagonal crosshatch, drawn thin
+   and low-opacity so it reads as texture, not decoration. Used behind the
+   header, the home hero, and empty states. */
+.trellis-lattice {
+  background-image:
+    repeating-linear-gradient(45deg, var(--color-pine-300) 0, var(--color-pine-300) 1px, transparent 1px, transparent 22px),
+    repeating-linear-gradient(-45deg, var(--color-pine-300) 0, var(--color-pine-300) 1px, transparent 1px, transparent 22px);
+  background-position: center;
+  opacity: 0.16;
+}
+html.dark .trellis-lattice {
+  background-image:
+    repeating-linear-gradient(45deg, var(--color-pine-500) 0, var(--color-pine-500) 1px, transparent 1px, transparent 22px),
+    repeating-linear-gradient(-45deg, var(--color-pine-500) 0, var(--color-pine-500) 1px, transparent 1px, transparent 22px);
+  opacity: 0.14;
+}
+
+/* Thin scrollbars that match the palette */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-pine-300) transparent;
+}
+html.dark * {
+  scrollbar-color: var(--color-dark-line) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
