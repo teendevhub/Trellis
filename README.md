@@ -11,7 +11,8 @@ It's named for the garden structure — a lattice you attach new growth to.
 Every tool in this app is a plugin bolted onto the same simple frame, and
 adding a new one is meant to be a first-PR-friendly afternoon project.
 
-![Trellis screenshot placeholder](./docs/screenshot-placeholder.png)
+<img width="1596" height="759" alt="image" src="https://github.com/user-attachments/assets/9777b1c3-ccc4-4f6a-becb-c523c30c1894" />
+
 
 ## Included tools
 
